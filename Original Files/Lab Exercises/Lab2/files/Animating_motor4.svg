@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ <!-- Dependencies:  Animating_motor4_snapshot.jpg, 
+        Animating_motor4.gif,  in the same directory -->
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet"
+   width="100%" height="100%"
+   onload="init()">
+  <style>
+      .buttons:hover{opacity:0.5;}
+  </style>
+  <defs>
+    <g class="gifs"  id="gif">
+      <rect
+         fill="rgb(252,232,201)" stroke="none"
+         x="0" y="0"
+         width="400" height="350"/>
+     
+      <image
+         xlink:href="Animating_motor4_snapshot.jpg"
+         visibility="visible"
+         height="300" width="300"
+         x="50" y="20" 
+         id="4_ttk" />
+    </g>
+  </defs>
+  <title>Animating motor4</title>
+  <script
+     type="text/javascript"
+     id="script3020">4
+	    var animating_button;
+	    var image;
+            var buttonText;
+
+            function init() {
+                buttonText = document.getElementById("buttonText");
+		animating_button = document.getElementById("on_off");
+		image = document.getElementById("4_ttk");
+            }
+
+	    function buttonPressed(evt) {
+		if (evt.target.getAttribute("fill")=="green")
+		{evt.target.setAttribute("fill", "red");
+		image.setAttribute("xlink:href","Animating_motor4.gif" );
+		buttonText.firstChild.nodeValue = "Κάντε κλικ για παύση";}          
+		else {
+		image.setAttribute("xlink:href","Animating_motor4_snapshot.jpg" )
+		evt.target.setAttribute("fill","green");
+		buttonText.firstChild.nodeValue = "Κάντε κλικ για εκκίνηση";}
+	    } 
+</script>
+  <!--  GIF IMAGE  -->
+  <use
+     x="0"  y="0" transform="translate(70, 70) "
+     xlink:href="#gif"/>
+  <text x="70" y="50" id="buttonText"> Κάντε κλίκ  για εκκίνηση</text>
+  <g id="on_off_button" onclick="buttonPressed(evt)">
+    <rect class="buttons"  id="on_off"
+       x="300" y="40" width="50" height="20"
+       fill="green"  />
+  </g>
+ </svg>

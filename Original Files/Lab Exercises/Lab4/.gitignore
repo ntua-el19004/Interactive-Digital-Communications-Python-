@@ -1,0 +1,3 @@
+# ignore .ipynb_checkpoints directory
+# it is created every time we run the notebook
+/.ipynb_checkpoints
